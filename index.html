@@ -18,7 +18,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* منع تحديد النصوص أو الصور داخل الموقع لحماية المحتوى */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -32,6 +31,16 @@
             display: flex;
             flex-direction: column;
             background-color: #f5f5f5; 
+        }
+
+        /* حماية الجوال عند لقطات الشاشة والخروج من المتصفح */
+        @media only screen and (max-width: 768px) {
+            @media (visibility-state: hidden) {
+                body {
+                    display: none !important;
+                    background: #000000 !important;
+                }
+            }
         }
 
         /* رأس الموقع */
@@ -73,7 +82,6 @@
             display: block;
             max-width: 100%; 
             height: auto; 
-            /* منع سحب وتنزيل الصورة بالماوس */
             -webkit-user-drag: none;
         }
 
@@ -114,58 +122,55 @@
         
         <div class="content-wrapper">
             
-            <!-- الزر الأول -->
-            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="secureRedirect(event, this.href)"> Ka qaybgal hadda </a>
+            <!-- الزر الأول المرتبط بنظام التوجيه المشفر -->
+            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
             
             <!-- صورة بطن الموقع الأصلية -->
             <img src="0AM.jpeg" alt="صورة بطن الموقع" class="body-image" oncontextmenu="return false;">
             
-            <!-- الزر الثاني -->
-            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="secureRedirect(event, this.href)"> Ka qaybgal hadda </a>
+            <!-- الزر الثاني المرتبط بنظام التوجيه المشفر -->
+            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
             
         </div>
 
     </main>
 
-    <!-- سكربت أمني إضافي للتحويل والمنع التام للفحص واختصارات اللاب توب -->
+    <!-- نظام الجافا سكريبت المفر والمشوش بالكامل (Obfuscated Security Code) -->
     <script>
-        // 1. دالة التحويل الآمن لمنع كشف الروابط من البوتات
-        function secureRedirect(event, url) {
-            event.preventDefault();
-            var newWindow = window.open();
-            newWindow.opener = null;
-            newWindow.referrerPolicy = "no-referrer";
-            newWindow.location.href = url;
+        const _0x4f12 = ['preventDefault', 'open', 'opener', 'referrerPolicy', 'no-referrer', 'location', 'href', 'addEventListener', 'contextmenu', 'copy', 'cut', 'keydown', 'keyCode', 'ctrlKey', 'shiftKey', 'metaKey', 'keyup', 'clipboard', 'writeText', 'blur', 'style', 'display', 'none', 'focus', 'block', 'تم تعطيل تصوير الشاشة لحماية المحتوى!', 'غير مسموح بأخذ لقطة شاشة!'];
+        (function(_0x2d1a, _0x4f12e) {
+            const _0x3b1c = function(_0x14f2) {
+                while (--_0x14f2) { _0x2d1a['push'](_0x2d1a['shift']()); }
+            };
+            _0x3b1c(++_0x4f12e);
+        }(_0x4f12, 0x1a3));
+        const _0x3a1b = function(_0x2d1a, _0x4f12e) {
+            _0x2d1a = _0x2d1a - 0x0;
+            let _0x3b1c = _0x4f12[_0x2d1a];
+            return _0x3b1c;
+        };
+        function _0x5a1b(_0x1e2a, _0x591c) {
+            _0x1e2a[_0x3a1b('0x0')]();
+            var _0x401a = window[_0x3a1b('0x1')]();
+            _0x401a[_0x3a1b('0x2')] = null;
+            _0x401a[_0x3a1b('0x3')] = _0x3a1b('0x4');
+            _0x401a[_0x3a1b('0x5')][_0x3a1b('0x6')] = _0x591c;
         }
-
-        // 2. منع القائمة المنبثقة عند الضغط على زر الفأرة الأيمن (Right Click)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
+        document[_0x3a1b('0x7')](_0x3a1b('0x8'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+        document[_0x3a1b('0x7')](_0x3a1b('0x9'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+        document[_0x3a1b('0x10')](_0x3a1b('0xa'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+        document[_0x3a1b('0x7')](_0x3a1b('0xb'), function(_0x1e2a) {
+            if (_0x1e2a[_0x3a1b('0xc')] === 0x7b) { _0x1e2a[_0x3a1b('0x0')](); return false; }
+            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x49 || _0x1e2a[_0x3a1b('0xc')] === 0x4a)) { _0x1e2a[_0x3a1b('0x0')](); return false; }
+            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xe')] && _0x1e2a[_0x3a1b('0xc')] === 0x43) { _0x1e2a[_0x3a1b('0x0')](); return false; }
+            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xc')] === 0x55) { _0x1e2a[_0x3a1b('0x0')](); return false; }
+            if ((_0x1e2a[_0x3a1b('0xf')] || _0x1e2a[_0x3a1b('0xd')]) && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x53 || _0x1e2a[_0x3a1b('0xc')] === 0x34 || _0x1e2a[_0x3a1b('0xc')] === 0x33)) { alert(_0x3a1b('0x19')); _0x1e2a[_0x3a1b('0x0')](); return false; }
         });
-
-        // 3. منع اختصارات لوحة المفاتيح الشهيرة لفتح أدوات المطورين (Inspect)
-        document.addEventListener('keydown', function(e) {
-            // منع F12
-            if (e.keyCode === 123) {
-                e.preventDefault();
-                return false;
-            }
-            // منع Ctrl+Shift+I (أو Cmd+Opt+I على الماك)
-            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
-                e.preventDefault();
-                return false;
-            }
-            // منع Ctrl+Shift+C (أداة التحديد)
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
-                e.preventDefault();
-                return false;
-            }
-            // منع Ctrl+U (عرض الكود المصدري للموقع)
-            if (e.ctrlKey && e.keyCode === 85) {
-                e.preventDefault();
-                return false;
-            }
+        window[_0x3a1b('0x7')](_0x3a1b('0x10'), function(_0x1e2a) {
+            if (_0x1e2a[_0x3a1b('0xc')] === 0x2c) { navigator[_0x3a1b('0x11')][_0x3a1b('0x12')](''); alert(_0x3a1b('0x1a')); }
         });
+        window[_0x3a1b('0x7')](_0x3a1b('0x13'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x16'); });
+        window[_0x3a1b('0x7')](_0x3a1b('0x17'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x18'); });
     </script>
 
 </body>
