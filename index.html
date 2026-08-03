@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>واجهة ترحيبية</title>
     <style>
+
+
+        /* إخفاء المحتوى تماماً عند محاولة طباعة الصفحة أو تصويرها */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+        
+        /* تأثير الضباب (Blur) لحماية الشاشة عند التنقل بين التطبيقات في الجوال */
+        .blurred {
+            filter: blur(15px);
+            user-select: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -120,143 +147,58 @@
 
 
 
-<!-- 1. تنسيقات CSS لحظر التحديد وسحب الصور وتأثير حجب اللقطات والرسالة -->
-<style>
-  /* منع تحديد النصوص وسحب الصور */
-  body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE10+ */
-    user-select: none;         /* Standard */
-  }
-  img {
-    -webkit-user-drag: none;   /* منع سحب الصور */
-    user-drag: none;
-  }
 
-  /* تأثير التمويه عند خروج الهاتف عن التركيز لتشتيت لقطات الشاشة */
-  .blur-screen {
-    filter: blur(25px) !important;
-    background: #000 !important;
-    opacity: 0 !important;
-    transition: opacity 0.2s ease;
-  }
 
-  /* تنسيق رسالة التحذير العائمة (Toast) */
-  #custom-alert {
-    visibility: hidden;
-    min-width: 280px;
-    background-color: #e74c3c; /* لون أحمر تحذيري */
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    padding: 16px;
-    position: fixed;
-    z-index: 99999;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    font-family: system-ui, -apple-system, sans-serif;
-    font-weight: bold;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
-    direction: rtl;
-  }
-  #custom-alert.show {
-    visibility: visible;
-    animation: fadein 0.4s, fadeout 0.4s 2.6s;
-  }
-  @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
-  @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
-</style>
 
-<!-- عنصر رسالة التحذير -->
-<div id="custom-alert">عذراً، نسخ المحتوى أو استخدام أدوات الفحص غير مسموح به!</div>
 
-<!-- 2. سكربت الحماية الشامل JavaScript -->
-<script>
-  // دالة مخصصة لإظهار رسالة التحذير العائمة
-  function showWarning() {
-    var alertBox = document.getElementById("custom-alert");
-    if (!alertBox.classList.contains("show")) {
-      alertBox.classList.add("show");
-      setTimeout(function() { 
-        alertBox.classList.remove("show"); 
-      }, 3000);
-    }
-  }
 
-  // أ. تعطيل القائمة اليمنى وإظهار التحذير
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    showWarning();
-  });
 
-  // ب. حظر الأزرار والاختصارات البرمجية
-  document.addEventListener('keydown', function(e) {
-    // حظر زر F12
-    if (e.key === 'F12') {
-      e.preventDefault();
-      showWarning();
-      return false;
-    }
 
-    // حظر Ctrl+Shift+I (أدوات المطور)
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-      e.preventDefault();
-      showWarning();
-      return false;
-    }
 
-    // حظر Ctrl+Shift+C (عنصر الفحص)
-    if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
-      e.preventDefault();
-      showWarning();
-      return false;
-    }
 
-    // حظر Ctrl+U (عرض السورس كود)
-    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
-      e.preventDefault();
-      showWarning();
-      return false;
-    }
-    
-    // حظر Ctrl+S (حفظ الصفحة)
-    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
-      e.preventDefault();
-      showWarning();
-      return false;
-    }
-  });
 
-  // ج. منع سحب وإفلات العناصر والصور
-  document.addEventListener('dragstart', function(e) {
-    e.preventDefault();
-  });
 
-  // د. حماية لقطات الشاشة للهواتف عبر التمويه عند فقدان التركيز
-  window.addEventListener('blur', function() {
-    document.body.classList.add('blur-screen');
-  });
-  window.addEventListener('focus', function() {
-    document.body.classList.remove('blur-screen');
-  });
 
-  // هـ. فحص وإغلاق الصفحة تلقائياً في حال فتح أدوات المطور بطرق ملتوية
-  (function() {
-    const threshold = 160; 
-    function detectDevTools() {
-      const widthCheck = window.outerWidth - window.innerWidth > threshold;
-      const heightCheck = window.outerHeight - window.innerHeight > threshold;
-      
-      if (widthCheck || heightCheck) {
-        window.location.href = "about:blank"; // توجيه لصفحة فارغة فوراً
-      }
-    }
-    setInterval(detectDevTools, 1000);
-    window.addEventListener('resize', detectDevTools);
-  })();
-</script>
+
+
+
+
+    <script>
+        const content = document.getElementById('content');
+
+        // 1. تشويش الشاشة إذا تشتت انتباه المستخدم (عند فتح قائمة المهام في الجوال مثلاً)
+        window.addEventListener('blur', () => {
+            content.classList.add('blurred');
+        });
+
+        // إزالة التشويش عند العودة للموقع
+        window.addEventListener('focus', () => {
+            content.classList.remove('blurred');
+        });
+
+        // 2. منع زر الفأرة الأيمن (لمنع فحص العناصر وحفظ الصور)
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // 3. منع أزرار اختصارات لقطة الشاشة والـ DevTools في اللابتوب
+        document.addEventListener('keydown', (e) => {
+            // منع Ctrl+P (الطباعة)
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                alert('الطباعة غير مسموحة!');
+            }
+            // منع F12 و Ctrl+Shift+I (فحص العناصر)
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+            // منع أزرار تصوير الشاشة المشهورة (مثل Print Screen)
+            if (e.key === 'PrintScreen') {
+                navigator.clipboard.writeText(''); // تفريغ الحافظة فوراً
+                alert('تنبيه: تصوير الشاشة ممنوع!');
+            }
+        });
+    </script>
 
 
 </body>
