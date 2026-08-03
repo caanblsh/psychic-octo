@@ -3,190 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DahabPlus</title>
-    
-    <!-- إعدادات إظهار الصورة والبيانات على فيسبوك وإنستغرام -->
-    <meta property="og:title" content="DahabPlus - Hadda la wadaag - DahabPlus" />
-    <meta property="og:description" content="Abaalmarimo lacageed oo dhan $50,000 oo laga helayo DahabPlus! 💰✨" />
-    <meta property="og:image" content="https://github.io" />
-    <meta property="og:url" content="https://github.io" />
-    <meta property="og:type" content="website" />
-
+    <title>واجهة ترحيبية</title>
     <style>
-        /* [حظر التحديد والسحب] منع تحديد النصوص أو الصور في كامل الموقع */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none; /* حظر القوائم المنبثقة على الهواتف */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             display: flex;
-            flex-direction: column;
-            background-color: #f5f5f5; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
         }
 
-        /* حماية لقطات الشاشة في الجوال */
-        @media only screen and (max-width: 768px) {
-            @media (visibility-state: hidden) {
-                body {
-                    display: none !important;
-                    background: #000000 !important;
-                }
-            }
-        }
-
-        header {
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             width: 100%;
-            background-color: #ffffff; 
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            z-index: 10;
-        }
-
-        .header-image {
-            max-width: 90%;
-            height: auto;
-            max-height: 120px;
-            display: block;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px; 
-        }
-
-        /* [حظر السحب] منع سحب الصور نهائياً */
-        .body-image {
-            display: block;
-            max-width: 100%; 
-            height: auto; 
-            -webkit-user-drag: none;
-            pointer-events: none; /* يمنع أي تفاعل بالماوس مع الصورة */
-        }
-
-        .custom-btn {
-            background-color: transparent; 
-            color: #2ecc71; 
-            border: 3px solid #2ecc71; 
-            padding: 12px 40px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none; 
-            display: inline-block;
+            max-width: 450px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .custom-btn:hover {
-            background-color: #2ecc71;
-            color: white;
-            box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
-            transform: scale(1.05);
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #00d2ff;
+            background: linear-gradient(to right, #00d2ff, #92fe9d);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px auto;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
+        }
+
+        .welcome-card h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .welcome-card p {
+            font-size: 16px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-action {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #ffffff;
+            color: #203a43;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-action:hover {
+            background: #00d2ff;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="download.png" alt="شعار الموقع" class="header-image">
-    </header>
+    <div class="welcome-card">
+        <div class="icon-box">✨</div>
+        <h1>مرحباً بك في منصتنا</h1>
+        <p>اكتشف تجربة مستخدم فريدة وعصرية مصممة خصيصاً لتلبية احتياجاتك بكل سهولة وسلاسة.</p>
+        <a href="#" class="btn-action">ابدأ الآن</a>
+    </div>
 
-    <main class="main-content">
-        <div class="content-wrapper">
-            
-            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
-            
-            <img src="0AM.jpeg" alt="صورة بطن الموقع" class="body-image">
-            
-            <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
-            
-        </div>
-    </main>
 
-    <!-- نظام الحماية والتشفير الشامل والإغلاق التلقائي للمتصفح -->
-    <script>
-        const _0x4f12 = ['preventDefault', 'open', 'opener', 'referrerPolicy', 'no-referrer', 'location', 'href', 'addEventListener', 'contextmenu', 'copy', 'cut', 'keydown', 'keyCode', 'ctrlKey', 'shiftKey', 'metaKey', 'keyup', 'clipboard', 'writeText', 'blur', 'style', 'display', 'none', 'focus', 'block', 'تم تعطيل تصوير الشاشة لحماية المحتوى!', 'غير مسموح بأخذ لقطة شاشة!', 'setInterval', 'constructor', 'debugger', 'clear'];
-        (function(_0x2d1a, _0x4f12e) {
-            const _0x3b1c = function(_0x14f2) {
-                while (--_0x14f2) { _0x2d1a['push'](_0x2d1a['shift']()); }
-            };
-            _0x3b1c(++_0x4f12e);
-        }(_0x4f12, 0x1a3));
-        const _0x3a1b = function(_0x2d1a, _0x4f12e) {
-            _0x2d1a = _0x2d1a - 0x0;
-            let _0x3b1c = _0x4f12[_0x2d1a];
-            return _0x3b1c;
-        };
-        
-        // نظام التوجيه الآمن للأزرار
-        function _0x5a1b(_0x1e2a, _0x591c) {
-            _0x1e2a[_0x3a1b('0x0')]();
-            var _0x401a = window[_0x3a1b('0x1')]();
-            _0x401a[_0x3a1b('0x2')] = null;
-            _0x401a[_0x3a1b('0x3')] = _0x3a1b('0x4');
-            _0x401a[_0x3a1b('0x5')][_0x3a1b('0x6')] = _0x591c;
-        }
 
-        // [تعطيل الزر الأيمن]
-        document[_0x3a1b('0x7')](_0x3a1b('0x8'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
-        // منع النسخ والقص للمحتوى
-        document[_0x3a1b('0x7')](_0x3a1b('0x9'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
-        document[_0x3a1b('0x7')](_0x3a1b('0xa'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
 
-        // [حظر الاختصارات F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+C]
-        document[_0x3a1b('0x7')](_0x3a1b('0xb'), function(_0x1e2a) {
-            if (_0x1e2a[_0x3a1b('0xc')] === 0x7b) { _0x1e2a[_0x3a1b('0x0')](); return false; }
-            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x49 || _0x1e2a[_0x3a1b('0xc')] === 0x4a)) { _0x1e2a[_0x3a1b('0x0')](); return false; }
-            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xe')] && _0x1e2a[_0x3a1b('0xc')] === 0x43) { _0x1e2a[_0x3a1b('0x0')](); return false; }
-            if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xc')] === 0x55) { _0x1e2a[_0x3a1b('0x0')](); return false; }
-            if ((_0x1e2a[_0x3a1b('0xf')] || _0x1e2a[_0x3a1b('0xd')]) && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x53 || _0x1e2a[_0x3a1b('0xc')] === 0x34 || _0x1e2a[_0x3a1b('0xc')] === 0x33)) { alert(_0x3a1b('0x19')); _0x1e2a[_0x3a1b('0x0')](); return false; }
-        });
 
-        // مسح لقطات شاشة الكمبيوتر
-        window[_0x3a1b('0x7')](_0x3a1b('0x10'), function(_0x1e2a) {
-            if (_0x1e2a[_0x3a1b('0xc')] === 0x2c) { navigator[_0x3a1b('0x11')][_0x3a1b('0x12')](''); alert(_0x3a1b('0x1a')); }
-        });
 
-        // حماية الهاتف والتنقل الفوري للمتصفح
-        window[_0x3a1b('0x7')](_0x3a1b('0x13'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x16'); });
-        window[_0x3a1b('0x7')](_0x3a1b('0x17'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x18'); });
 
-        // [نظام التدمير والإغلاق التلقائي] كشف أدوات الفحص وتجميد الصفحة فوراً
-        setInterval(function() {
-            conststartTime = new Date();
-            (function() {}[_0x3a1b('0x1c')](_0x3a1b('0x1d'))());
-            constendTime = new Date();
-            if (endTime - startTime > 100) {
-                // في حال فتح الأدوات، يتم تعليق وإغلاق الصفحة أو تحويلها فوراً
-                document.body.innerHTML = "<h1>⚠️ Access Denied - Security Breach Detected</h1>";
-                window.location.href = "about:blank"; 
-            }
-        }, 200);
-    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 1. تنسيقات CSS لحظر التحديد وسحب الصور وتأثير حجب اللقطات والرسالة -->
+<style>
+  /* منع تحديد النصوص وسحب الصور */
+  body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;         /* Standard */
+  }
+  img {
+    -webkit-user-drag: none;   /* منع سحب الصور */
+    user-drag: none;
+  }
+
+  /* تأثير التمويه عند خروج الهاتف عن التركيز لتشتيت لقطات الشاشة */
+  .blur-screen {
+    filter: blur(25px) !important;
+    background: #000 !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease;
+  }
+
+  /* تنسيق رسالة التحذير العائمة (Toast) */
+  #custom-alert {
+    visibility: hidden;
+    min-width: 280px;
+    background-color: #e74c3c; /* لون أحمر تحذيري */
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 99999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+    direction: rtl;
+  }
+  #custom-alert.show {
+    visibility: visible;
+    animation: fadein 0.4s, fadeout 0.4s 2.6s;
+  }
+  @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+  @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+</style>
+
+<!-- عنصر رسالة التحذير -->
+<div id="custom-alert">عذراً، نسخ المحتوى أو استخدام أدوات الفحص غير مسموح به!</div>
+
+<!-- 2. سكربت الحماية الشامل JavaScript -->
+<script>
+  // دالة مخصصة لإظهار رسالة التحذير العائمة
+  function showWarning() {
+    var alertBox = document.getElementById("custom-alert");
+    if (!alertBox.classList.contains("show")) {
+      alertBox.classList.add("show");
+      setTimeout(function() { 
+        alertBox.classList.remove("show"); 
+      }, 3000);
+    }
+  }
+
+  // أ. تعطيل القائمة اليمنى وإظهار التحذير
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    showWarning();
+  });
+
+  // ب. حظر الأزرار والاختصارات البرمجية
+  document.addEventListener('keydown', function(e) {
+    // حظر زر F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+      showWarning();
+      return false;
+    }
+
+    // حظر Ctrl+Shift+I (أدوات المطور)
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+      e.preventDefault();
+      showWarning();
+      return false;
+    }
+
+    // حظر Ctrl+Shift+C (عنصر الفحص)
+    if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+      e.preventDefault();
+      showWarning();
+      return false;
+    }
+
+    // حظر Ctrl+U (عرض السورس كود)
+    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+      e.preventDefault();
+      showWarning();
+      return false;
+    }
+    
+    // حظر Ctrl+S (حفظ الصفحة)
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+      e.preventDefault();
+      showWarning();
+      return false;
+    }
+  });
+
+  // ج. منع سحب وإفلات العناصر والصور
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+
+  // د. حماية لقطات الشاشة للهواتف عبر التمويه عند فقدان التركيز
+  window.addEventListener('blur', function() {
+    document.body.classList.add('blur-screen');
+  });
+  window.addEventListener('focus', function() {
+    document.body.classList.remove('blur-screen');
+  });
+
+  // هـ. فحص وإغلاق الصفحة تلقائياً في حال فتح أدوات المطور بطرق ملتوية
+  (function() {
+    const threshold = 160; 
+    function detectDevTools() {
+      const widthCheck = window.outerWidth - window.innerWidth > threshold;
+      const heightCheck = window.outerHeight - window.innerHeight > threshold;
+      
+      if (widthCheck || heightCheck) {
+        window.location.href = "about:blank"; // توجيه لصفحة فارغة فوراً
+      }
+    }
+    setInterval(detectDevTools, 1000);
+    window.addEventListener('resize', detectDevTools);
+  })();
+</script>
+
 
 </body>
 </html>
