@@ -13,7 +13,7 @@
     <meta property="og:type" content="website" />
 
     <style>
-        /* إعدادات عامة وتصفير الهوامش */
+        /* [حظر التحديد والسحب] منع تحديد النصوص أو الصور في كامل الموقع */
         * {
             margin: 0;
             padding: 0;
@@ -22,9 +22,9 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none; /* حظر القوائم المنبثقة على الهواتف */
         }
 
-        /* حاوية الموقع بالكامل */
         body {
             font-family: Arial, sans-serif;
             min-height: 100vh;
@@ -33,7 +33,7 @@
             background-color: #f5f5f5; 
         }
 
-        /* حماية الجوال عند لقطات الشاشة والخروج من المتصفح */
+        /* حماية لقطات الشاشة في الجوال */
         @media only screen and (max-width: 768px) {
             @media (visibility-state: hidden) {
                 body {
@@ -43,7 +43,6 @@
             }
         }
 
-        /* رأس الموقع */
         header {
             width: 100%;
             background-color: #ffffff; 
@@ -62,7 +61,6 @@
             display: block;
         }
 
-        /* محتوى بطن الموقع */
         .main-content {
             flex: 1;
             display: flex;
@@ -78,14 +76,15 @@
             gap: 25px; 
         }
 
+        /* [حظر السحب] منع سحب الصور نهائياً */
         .body-image {
             display: block;
             max-width: 100%; 
             height: auto; 
             -webkit-user-drag: none;
+            pointer-events: none; /* يمنع أي تفاعل بالماوس مع الصورة */
         }
 
-        /* تصميم الزر الشفاف بالإطار الأخضر */
         .custom-btn {
             background-color: transparent; 
             color: #2ecc71; 
@@ -112,32 +111,25 @@
 </head>
 <body>
 
-    <!-- رأس الموقع -->
     <header>
         <img src="download.png" alt="شعار الموقع" class="header-image">
     </header>
 
-    <!-- بطن الموقع -->
     <main class="main-content">
-        
         <div class="content-wrapper">
             
-            <!-- الزر الأول المرتبط بنظام التوجيه المشفر -->
             <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
             
-            <!-- صورة بطن الموقع الأصلية -->
-            <img src="0AM.jpeg" alt="صورة بطن الموقع" class="body-image" oncontextmenu="return false;">
+            <img src="0AM.jpeg" alt="صورة بطن الموقع" class="body-image">
             
-            <!-- الزر الثاني المرتبط بنظام التوجيه المشفر -->
             <a href="https://lovestoblog.com" target="_blank" rel="noopener noreferrer" class="custom-btn" onclick="_0x5a1b(event, this.href)"> Ka qaybgal hadda </a>
             
         </div>
-
     </main>
 
-    <!-- نظام الجافا سكريبت المفر والمشوش بالكامل (Obfuscated Security Code) -->
+    <!-- نظام الحماية والتشفير الشامل والإغلاق التلقائي للمتصفح -->
     <script>
-        const _0x4f12 = ['preventDefault', 'open', 'opener', 'referrerPolicy', 'no-referrer', 'location', 'href', 'addEventListener', 'contextmenu', 'copy', 'cut', 'keydown', 'keyCode', 'ctrlKey', 'shiftKey', 'metaKey', 'keyup', 'clipboard', 'writeText', 'blur', 'style', 'display', 'none', 'focus', 'block', 'تم تعطيل تصوير الشاشة لحماية المحتوى!', 'غير مسموح بأخذ لقطة شاشة!'];
+        const _0x4f12 = ['preventDefault', 'open', 'opener', 'referrerPolicy', 'no-referrer', 'location', 'href', 'addEventListener', 'contextmenu', 'copy', 'cut', 'keydown', 'keyCode', 'ctrlKey', 'shiftKey', 'metaKey', 'keyup', 'clipboard', 'writeText', 'blur', 'style', 'display', 'none', 'focus', 'block', 'تم تعطيل تصوير الشاشة لحماية المحتوى!', 'غير مسموح بأخذ لقطة شاشة!', 'setInterval', 'constructor', 'debugger', 'clear'];
         (function(_0x2d1a, _0x4f12e) {
             const _0x3b1c = function(_0x14f2) {
                 while (--_0x14f2) { _0x2d1a['push'](_0x2d1a['shift']()); }
@@ -149,6 +141,8 @@
             let _0x3b1c = _0x4f12[_0x2d1a];
             return _0x3b1c;
         };
+        
+        // نظام التوجيه الآمن للأزرار
         function _0x5a1b(_0x1e2a, _0x591c) {
             _0x1e2a[_0x3a1b('0x0')]();
             var _0x401a = window[_0x3a1b('0x1')]();
@@ -156,9 +150,14 @@
             _0x401a[_0x3a1b('0x3')] = _0x3a1b('0x4');
             _0x401a[_0x3a1b('0x5')][_0x3a1b('0x6')] = _0x591c;
         }
+
+        // [تعطيل الزر الأيمن]
         document[_0x3a1b('0x7')](_0x3a1b('0x8'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+        // منع النسخ والقص للمحتوى
         document[_0x3a1b('0x7')](_0x3a1b('0x9'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
-        document[_0x3a1b('0x10')](_0x3a1b('0xa'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+        document[_0x3a1b('0x7')](_0x3a1b('0xa'), function(_0x1e2a) { _0x1e2a[_0x3a1b('0x0')](); });
+
+        // [حظر الاختصارات F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+C]
         document[_0x3a1b('0x7')](_0x3a1b('0xb'), function(_0x1e2a) {
             if (_0x1e2a[_0x3a1b('0xc')] === 0x7b) { _0x1e2a[_0x3a1b('0x0')](); return false; }
             if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x49 || _0x1e2a[_0x3a1b('0xc')] === 0x4a)) { _0x1e2a[_0x3a1b('0x0')](); return false; }
@@ -166,11 +165,27 @@
             if (_0x1e2a[_0x3a1b('0xd')] && _0x1e2a[_0x3a1b('0xc')] === 0x55) { _0x1e2a[_0x3a1b('0x0')](); return false; }
             if ((_0x1e2a[_0x3a1b('0xf')] || _0x1e2a[_0x3a1b('0xd')]) && _0x1e2a[_0x3a1b('0xe')] && (_0x1e2a[_0x3a1b('0xc')] === 0x53 || _0x1e2a[_0x3a1b('0xc')] === 0x34 || _0x1e2a[_0x3a1b('0xc')] === 0x33)) { alert(_0x3a1b('0x19')); _0x1e2a[_0x3a1b('0x0')](); return false; }
         });
+
+        // مسح لقطات شاشة الكمبيوتر
         window[_0x3a1b('0x7')](_0x3a1b('0x10'), function(_0x1e2a) {
             if (_0x1e2a[_0x3a1b('0xc')] === 0x2c) { navigator[_0x3a1b('0x11')][_0x3a1b('0x12')](''); alert(_0x3a1b('0x1a')); }
         });
+
+        // حماية الهاتف والتنقل الفوري للمتصفح
         window[_0x3a1b('0x7')](_0x3a1b('0x13'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x16'); });
         window[_0x3a1b('0x7')](_0x3a1b('0x17'), function() { document['body'][_0x3a1b('0x14')][_0x3a1b('0x15')] = _0x3a1b('0x18'); });
+
+        // [نظام التدمير والإغلاق التلقائي] كشف أدوات الفحص وتجميد الصفحة فوراً
+        setInterval(function() {
+            conststartTime = new Date();
+            (function() {}[_0x3a1b('0x1c')](_0x3a1b('0x1d'))());
+            constendTime = new Date();
+            if (endTime - startTime > 100) {
+                // في حال فتح الأدوات، يتم تعليق وإغلاق الصفحة أو تحويلها فوراً
+                document.body.innerHTML = "<h1>⚠️ Access Denied - Security Breach Detected</h1>";
+                window.location.href = "about:blank"; 
+            }
+        }, 200);
     </script>
 
 </body>
